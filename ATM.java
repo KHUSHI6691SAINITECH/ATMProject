@@ -6,13 +6,13 @@ class User {
     private String name;
     private String pin;
     private double balance;
-    private int phoneNumber;
+    
 
-    public User(String name, String pin, double balance, int phoneNumber) {
+    public User(String name, String pin, double balance) {
         this.name = name;
         this.pin = pin;
         this.balance = balance;
-        this.phoneNumber = phoneNumber;
+        
     }
 
     public String getName() {
@@ -26,9 +26,7 @@ class User {
     public double getBalance() {
         return balance;
     }
-    public int phoneNumber(){
-        return phoneNumber;
-    }
+    
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
@@ -46,9 +44,7 @@ class User {
     public void displayBalance() {
         System.out.println("Current balance: $" + balance);
     }
-    public void displayPhoneNumber(){
-        System.out.println("Current Phone Number: " + phoneNumber);
-    }     
+        
 }
 
 public class ATM {
@@ -57,8 +53,8 @@ public class ATM {
 
     public static void main(String[] args) {
         // Create some sample users
-        users.put("1234", new User("John Doe", "1234", 1000.0,8382848782));
-        users.put("5678", new User("Jane Smith", "5678", 1500.0,9836782934));
+        users.put("1234", new User("John Doe", "1234", 1000.0));
+        users.put("5678", new User("Jane Smith", "5678", 1500.0));
 
         Scanner scanner = new Scanner(System.in);
 
